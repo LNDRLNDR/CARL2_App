@@ -64,7 +64,6 @@ npm install
 ├── config.json      # Set your game PC's IP + ports here
 ├── index.js         # Main WebSocket proxy script
 ├── run.bat          # Shortcut for Windows
-├── run.sh           # Shortcut for Mac/Linux
 └── package.json     # Includes ws dependency
 ```
 
