@@ -40,7 +40,7 @@ from the game PC.
 ## 💡 What It Does
 
 - Acts as a bridge between your **remote PC** (running CARL2 to collect game data) and your **game PC** (running CARL2
-  to visuallise game data).
+  to visualize game data).
 - Each remote PC should run its own instance of the proxy tool (only once per machine). Multiple remote PCs can connect
   to the same game PC.
 
