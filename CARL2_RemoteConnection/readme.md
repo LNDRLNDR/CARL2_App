@@ -35,6 +35,9 @@ from the game PC.
 5. **Connect from CARL2 client:** Open CARL2 on your Non-Game PC and it should connect automatically if you set the
    correct Game PC IP in the config.json
 
+
+6. **On the game PC:** Make sure CARL2 has been launched at least once to install the required plugin. After that, you can close it — the plugin stays installed.
+
 ---
 
 ## 💡 What It Does
