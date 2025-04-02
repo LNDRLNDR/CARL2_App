@@ -12,7 +12,7 @@ from the game PC.
    unzip: [Download](https://github.com/LNDRLNDR/CARL2_App/raw/refs/heads/main/CARL2_RemoteConnection/CARL2Proxy.zip)
 
 2. **Edit `config.json`:**  
-   Set the `"remote_ip"` field to the IP address of the game PC (the one running CARL2).
+   Set the `"remote_ip"` field to the IP address of the game PC (the one running RocketLeague with CARL2).
 
     ```json
     {
@@ -33,13 +33,13 @@ from the game PC.
 
 
 5. **Connect from CARL2 client:** Open CARL2 on your Non-Game PC and it should connect automatically if you set the
-   correct Game PC in the config.json
+   correct Game PC IP in the config.json
 
 ---
 
 ## 💡 What It Does
 
-- Acts as a bridge between your **remote PC** (running CARL2 to collect game data) and your **game PC** (running CARL2
+- Acts as a bridge between your **game PC** (running RocketLeague & CARL2 to collect game data) and your **remote PC** (running CARL2
   to visualize game data).
 - Each remote PC should run its own instance of the proxy tool (only once per machine). Multiple remote PCs can connect
   to the same game PC.
