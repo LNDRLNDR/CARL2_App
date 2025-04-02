@@ -1,47 +1,48 @@
 # 🛰️ WebSocket Local Proxy Tool for CARL2
 
-A simple Node.js-based WebSocket relay that allows remote PCs on the same network to connect to CARL2 running on a game PC. This tool forwards WebSocket messages locally so the CARL2 client on the remote machine can receive live game data from the game PC.
+A simple Node.js-based WebSocket relay that allows remote PCs on the same network to connect to CARL2 running on a game
+PC. This tool forwards WebSocket messages locally so the CARL2 client on the remote machine can receive live game data
+from the game PC.
 
 ---
 
 ## 🔧 How to Use
 
-1. **Edit `config.json`:**  
+1. Download this CARL2 Proxy package and
+   unzip: [Download](https://github.com/LNDRLNDR/CARL2_App/raw/refs/heads/main/CARL2_RemoteConnection/CARL2Proxy.zip)
+
+2. **Edit `config.json`:**  
    Set the `"remote_ip"` field to the IP address of the game PC (the one running CARL2).
 
+    ```json
+    {
+      "remote_ip": "192.168.1.45",
+      "remote_port": 49446,
+      "local_port": 49446,
+      "debug": true
+    }
+    ```
 
-   ```json
-   {
-  "remote_ip": "192.168.1.45",
-  "remote_port": 49446,
-  "local_port": 49446,
-  "debug": true
-}
-   ```
+3. **Install dependencies (first time only):**
 
+    ```bash
+    npm install
+    ```
 
-2. **Install dependencies (first time only):**
-
-   ```bash
-   npm install
-   ```
-
-
-3. **Run the relay:**
-   Double-click `run.bat`
+4. **Run the relay:** Double-click `run.bat`
 
 
-4. **Connect from CARL2 client:**
-   Open CARL2 on your Non-Game PC and it should connect automatically if you set the correct Game PC in the config.json
-
-
+5. **Connect from CARL2 client:** Open CARL2 on your Non-Game PC and it should connect automatically if you set the
+   correct Game PC in the config.json
 
 ---
 
 ## 💡 What It Does
 
-- Acts as a bridge between your **remote PC** (running CARL2 to collect game data) and your **game PC** (running CARL2 to visuallise game data).
-- Each remote PC should run its own instance of the proxy tool (only once per machine). Multiple remote PCs can connect to the same game PC.
+- Acts as a bridge between your **remote PC** (running CARL2 to collect game data) and your **game PC** (running CARL2
+  to visuallise game data).
+- Each remote PC should run its own instance of the proxy tool (only once per machine). Multiple remote PCs can connect
+  to the same game PC.
 
 ---
 
@@ -50,15 +51,13 @@ A simple Node.js-based WebSocket relay that allows remote PCs on the same networ
 - [Node.js](https://nodejs.org/)
 - The only dependency is the [`ws`](https://www.npmjs.com/package/ws) WebSocket library:
 
-  ```bash
-  npm install
-  ```
-
+```bash
+npm install
+```
 
 ---
 
 ## 📁 File Structure
-
 
 ```
 /CARL2_RemoteConnection
@@ -68,7 +67,6 @@ A simple Node.js-based WebSocket relay that allows remote PCs on the same networ
 ├── run.sh           # Shortcut for Mac/Linux
 └── package.json     # Includes ws dependency
 ```
-
 
 ---
 
