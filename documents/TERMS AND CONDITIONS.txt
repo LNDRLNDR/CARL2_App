@@ -96,7 +96,7 @@ Submissions: By directly sending us any question, comment, suggestion, idea, fee
 You are responsible for what you post or upload: By sending us Submissions through any part of the Services you:
 confirm that you have read and agree with our "PROHIBITED ACTIVITIES" and will not post, send, publish, upload, or transmit through the Services any Submission that is illegal, harassing, hateful, harmful, defamatory, obscene, bullying, abusive, discriminatory, threatening to any person or group, sexually explicit, false, inaccurate, deceitful, or misleading;
 to the extent permissible by applicable law, waive any and all moral rights to any such Submission;
-warrant that any such Submission are original to you or that you have the necessary rights and licenses to submit such Submissions and that you have full authority to grant us the above-mentioned rights in relation to your Submissions; and
+warrant that any such Submissions are original to you or that you have the necessary rights and licenses to submit such Submissions and that you have full authority to grant us the above-mentioned rights in relation to your Submissions; and
 warrant and represent that your Submissions do not constitute confidential information.
 You are solely responsible for your Submissions and you expressly agree to reimburse us for any and all losses that we may suffer because of your breach of (a) this section, (b) any third party’s intellectual property rights, or (c) applicable law.
 
@@ -160,7 +160,7 @@ Use the Services as part of any effort to compete with us or otherwise use the S
 
 10. USER GENERATED CONTRIBUTIONS
 
-The Services does not offer users to submit or post content. We may provide you with the opportunity to create, submit, post, display, transmit, perform, publish, distribute, or broadcast content and materials to us or on the Services, including but not limited to text, writings, video, audio, photographs, graphics, comments, suggestions, or personal information or other material (collectively, "Contributions"). Contributions may be viewable by other users of the Services and through third-party websites. When you create or make available any Contributions, you thereby represent and warrant that:
+The Services do not allow users to submit or post content. We may provide you with the opportunity to create, submit, post, display, transmit, perform, publish, distribute, or broadcast content and materials to us or on the Services, including but not limited to text, writings, video, audio, photographs, graphics, comments, suggestions, or personal information or other material (collectively, "Contributions"). Contributions may be viewable by other users of the Services and through third-party websites. When you create or make available any Contributions, you thereby represent and warrant that:
 The creation, distribution, transmission, public display, or performance, and the accessing, downloading, or copying of your Contributions do not and will not infringe the proprietary rights, including but not limited to the copyright, patent, trademark, trade secret, or moral rights of any third party.
 You are the creator and owner of or have the necessary licenses, rights, consents, releases, and permissions to use and to authorize us, the Services, and other users of the Services to use your Contributions in any manner contemplated by the Services and these Legal Terms.
 You have the written consent, release, and/or permission of each and every identifiable individual person in your Contributions to use the name or likeness of each and every such identifiable individual person to enable inclusion and use of your Contributions in any manner contemplated by the Services and these Legal Terms.
@@ -210,7 +210,7 @@ We cannot guarantee the Services will be available at all times. We may experien
 
 17. GOVERNING LAW
 
-These Legal Terms are governed by and interpreted following the laws of Belgium, and the use of the United Nations Convention of Contracts for the International Sales of Goods is expressly excluded. If your habitual residence is in the EU, and you are a consumer, you additionally possess the protection provided to you by obligatory provisions of the law in your country to residence. CARL Overlay and yourself both agree to submit to the non-exclusive jurisdiction of the courts, which means that you may make a claim to defend your consumer protection rights in regards to these Legal Terms in Belgium, or in the EU country in which you reside.
+These Legal Terms are governed by and interpreted following applicable law, and the use of the United Nations Convention of Contracts for the International Sales of Goods is expressly excluded. If your habitual residence is in the EU, and you are a consumer, you additionally possess the protection provided to you by obligatory provisions of the law in your country of residence. CARL Overlay and yourself both agree to submit to the non-exclusive jurisdiction of the courts, which means that you may make a claim to defend your consumer protection rights in regards to these Legal Terms in the EU country in which you reside.
 
 18. DISPUTE RESOLUTION
 
@@ -253,5 +253,4 @@ These Legal Terms and any policies or operating rules posted by us on the Servic
 In order to resolve a complaint regarding the Services or to receive further information regarding use of the Services, please contact us at:
 
 CARL Overlay
-__________
 lndr.overlays@gmail.com
