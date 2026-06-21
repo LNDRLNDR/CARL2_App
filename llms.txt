@@ -1,0 +1,12 @@
+# Download CARL2 — Analysis Tool for Rocket League
+
+> Direct download page for CARL2, a free Windows desktop application for Rocket League replay analysis and live match tracking. Requires BakkesMod to be installed first. After installing CARL2, create a free account with your email address to begin.
+
+## Download
+
+- [CARL2 Download Page](https://lndrlndr.github.io/CARL2_App/): Download the latest CARL2 installer (.exe for Windows)
+- [CARL2 Discord](https://discord.gg/y4xwPpCyWn): Support, bug reports, feature requests, and update announcements
+
+## Optional
+
+- [CARL2 Feature Overview](https://lndrlndr.github.io/): Full feature documentation with screenshots and video trailers
