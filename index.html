@@ -53,11 +53,180 @@
 
         main {
             width: 100%;
-            height: 80%;
+            min-height: 80%;
 
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
+            padding-bottom: 40px;
+        }
+
+        /* ---------- Testimonials carousel ---------- */
+        .testimonials {
+            width: 100%;
+            margin: 25px auto 0 auto;
+        }
+
+        .testimonials h2 {
+            color: #FFFFFF;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+        }
+
+        .testimonials .subtitle {
+            color: #DCE6FA;
+            text-align: center;
+            font-size: 1.05rem;
+            margin: 0 20px 24px 20px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+        }
+
+        /* viewport: one card in focus, neighbours fade out on both sides */
+        .carousel {
+            position: relative;
+            width: min(100%, 780px);
+            margin: 0 auto;
+            overflow-x: auto;
+            padding: 8px 0;
+            scrollbar-width: none;
+            cursor: grab;
+            -webkit-mask-image: linear-gradient(to right, transparent 0, rgba(0, 0, 0, .35) 5%, #000 14%, #000 86%, rgba(0, 0, 0, .35) 95%, transparent 100%);
+            mask-image: linear-gradient(to right, transparent 0, rgba(0, 0, 0, .35) 5%, #000 14%, #000 86%, rgba(0, 0, 0, .35) 95%, transparent 100%);
+        }
+
+        .carousel::-webkit-scrollbar {
+            display: none;
+        }
+
+        .carousel.dragging {
+            cursor: grabbing;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        .carousel_track {
+            display: flex;
+            width: max-content;
+        }
+
+        .carousel_group {
+            display: flex;
+            gap: 20px;
+            padding-right: 20px; /* equals the gap, so the loop is seamless */
+        }
+
+        .testimonial {
+            background-color: #FFFFFF;
+            border-radius: 24px;
+            padding: 24px 24px 20px 24px;
+            width: min(85vw, 360px);
+            flex: 0 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-sizing: border-box;
+            border: 2px solid transparent;
+            transition: border-color .25s;
+        }
+
+        .testimonial:hover,
+        .testimonial:focus-within {
+            border-color: #6696FE;
+        }
+
+        .testimonial blockquote {
+            margin: 0 0 18px 0;
+            padding: 0;
+            border: none;
+            font-size: 1rem;
+            line-height: 1.55;
+            font-weight: 400;
+            color: #041E49;
+        }
+
+        .testimonial blockquote p {
+            margin: 0 0 12px 0;
+        }
+
+        .testimonial blockquote p:last-child {
+            margin-bottom: 0;
+        }
+
+        .testimonial .quote_mark {
+            display: block;
+            font-size: 3rem;
+            line-height: .6;
+            height: 22px;
+            font-weight: 900;
+            color: #6696FE;
+            margin-bottom: 6px;
+        }
+
+        .testimonial footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap;
+            border-top: 1px solid #E3E9F5;
+            padding-top: 14px;
+        }
+
+        .testimonial .author {
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .testimonial .role {
+            display: inline-block;
+            margin-left: 6px;
+            padding: 1px 9px;
+            border-radius: 999px;
+            background: #E8EFFF;
+            color: #2A5BD7;
+            font-size: .7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .04em;
+            vertical-align: 2px;
+        }
+
+        .testimonial .meta {
+            font-size: .85rem;
+            font-weight: 400;
+            color: #5B6B8C;
+        }
+
+        .testimonial a.source {
+            font-size: .85rem;
+            font-weight: 500;
+            color: #6696FE;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .testimonial a.source:hover,
+        .testimonial a.source:focus-visible {
+            color: #F8982D;
+        }
+
+        @media (max-width: 700px) {
+            .testimonials h2 {
+                font-size: 1.6rem;
+            }
+
+            .testimonial {
+                width: 80vw;
+            }
+
+            /* narrow screens: lighter fade so the card in focus stays readable */
+            .carousel {
+                -webkit-mask-image: linear-gradient(to right, transparent 0, #000 9%, #000 91%, transparent 100%);
+                mask-image: linear-gradient(to right, transparent 0, #000 9%, #000 91%, transparent 100%);
+            }
         }
 
         .download_box {
@@ -252,7 +421,7 @@
     <div class="download_box">
         <h1>Download CARL2</h1>
         <h2>Analysis Tool for Rocket League</h2>
-        <a href="https://github.com/LNDRLNDR/CARL2_App/releases/download/v3.0.1/CARL2-V3.0.1-Installer.exe"
+        <a href="https://github.com/LNDRLNDR/CARL2_App/releases/download/2.3.0/CARL2-V2.3.0-Installer.exe"
            style="background-color: #2FBFF5"
            class="waves-effect waves-light btn discord-btn btn-large"
            target="_blank"
@@ -272,8 +441,204 @@
             <div>Join the Discord</div>
         </a>
     </div>
+
+    <section class="testimonials" aria-labelledby="testimonials-title">
+        <h2 id="testimonials-title">What users say about CARL2</h2>
+        <p class="subtitle">From coaches, casters, players and teams using CARL2.</p>
+
+        <div class="carousel" id="carousel" role="region" aria-roledescription="carousel"
+             aria-label="User testimonials">
+            <div class="carousel_track">
+                <div class="carousel_group" id="carousel_group">
+            <article class="testimonial">
+                <div>
+                    <span class="quote_mark" aria-hidden="true">&ldquo;</span>
+                    <blockquote>
+                        <p>We couldn’t have won NA Open 3 without CARL2. It helped us pinpoint areas to improve in the weeks leading up to our win.</p>
+                        <p>Big shoutout to @LNDRLNDRLNDR for creating an amazing tool. It's the future of statistical analysis in our game. I highly recommend it!</p>
+                    </blockquote>
+                </div>
+                <footer>
+                    <div>
+                        <div><span class="author">Kevpert</span><span class="role">Coach</span></div>
+                        <div class="meta">@KevpertRL &middot; GGM1 &middot; March 2025</div>
+                    </div>
+                    <a class="source" href="https://x.com/KevpertRL/status/1897016308342120640" target="_blank" rel="noopener noreferrer">View on X &rarr;</a>
+                </footer>
+            </article>
+
+            <article class="testimonial">
+                <div>
+                    <span class="quote_mark" aria-hidden="true">&ldquo;</span>
+                    <blockquote>
+                        <p>My favorite bit of this is that it will capture data from the current game even if it's showing me something else. Like I can pull up the past 3 games of the series and look for things, then swap back to the current game without missing a beat.</p>
+                    </blockquote>
+                </div>
+                <footer>
+                    <div>
+                        <div><span class="author">Sean Stackhouse</span><span class="role">Caster</span></div>
+                        <div class="meta">@StaxRL &middot; March 2025</div>
+                    </div>
+                    <a class="source" href="https://x.com/StaxRL/status/1897314408587780458" target="_blank" rel="noopener noreferrer">View on X &rarr;</a>
+                </footer>
+            </article>
+
+            <article class="testimonial">
+                <div>
+                    <span class="quote_mark" aria-hidden="true">&ldquo;</span>
+                    <blockquote>
+                        <p>I've only used CARL2 for one broadcast but the amount of information it pumps out is astonishing.</p>
+                        <p>It'll take time to get used to how to use it to the fullest, but I'm gonna use this for every cast I can going forward.</p>
+                    </blockquote>
+                </div>
+                <footer>
+                    <div>
+                        <div><span class="author">stumpy</span><span class="role">Caster</span></div>
+                        <div class="meta">@StumpyGoblin &middot; March 2025</div>
+                    </div>
+                    <a class="source" href="https://x.com/StumpyGoblin/status/1897210717889290617" target="_blank" rel="noopener noreferrer">View on X &rarr;</a>
+                </footer>
+            </article>
+
+            <article class="testimonial">
+                <div>
+                    <span class="quote_mark" aria-hidden="true">&ldquo;</span>
+                    <blockquote>
+                        <p>This is a truly awesome resource, you guys should definitely check it out :D</p>
+                    </blockquote>
+                </div>
+                <footer>
+                    <div>
+                        <div><span class="author">John MacDonald</span><span class="role">Caster</span></div>
+                        <div class="meta">@JohnnyBoi_i &middot; March 2025</div>
+                    </div>
+                    <a class="source" href="https://x.com/JohnnyBoi_i/status/1897305185493660037" target="_blank" rel="noopener noreferrer">View on X &rarr;</a>
+                </footer>
+            </article>
+                </div>
+            </div>
+        </div>
+    </section>
 </main>
 
+<script>
+    // Testimonial carousel.
+    // - Cards are duplicated twice (3 identical sets) so the strip can loop in both directions.
+    // - It auto-scrolls slowly; hover, keyboard focus, a touch, a drag or a button press pauses it.
+    // - Users can drag (mouse), swipe (touch), use a trackpad/shift+wheel, or the arrow buttons.
+    (function () {
+      var carousel = document.getElementById('carousel');
+      var group = document.getElementById('carousel_group');
+      if (!carousel || !group) return;
+      var track = group.parentNode;
+
+      for (var i = 0; i < 2; i++) {
+        var copy = group.cloneNode(true);
+        copy.removeAttribute('id');
+        copy.setAttribute('aria-hidden', 'true');
+        copy.querySelectorAll('a').forEach(function (a) { a.setAttribute('tabindex', '-1'); });
+        track.appendChild(copy);
+      }
+
+      var SPEED = 32;          // px per second
+      var RESUME_DELAY = 2000; // ms of calm after a manual action before auto-scroll resumes
+      var reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+      var cards = carousel.querySelectorAll('.testimonial');
+      var G = 0;               // width of one set of cards
+
+      var pos = 0, lastSet = 0, lastScrollAt = 0, holdUntil = 0;
+      var hovering = false, focused = false, touchHeld = false, dragging = false;
+      var dragStartX = 0, dragStartLeft = 0, dragMoved = false;
+
+      function now() { return performance.now(); }
+      function centerLeft(card) { return card.offsetLeft - (carousel.clientWidth - card.offsetWidth) / 2; }
+
+      function measure() {
+        G = track.children[1].offsetLeft - track.children[0].offsetLeft;
+      }
+
+      function start() {
+        measure();
+        pos = centerLeft(track.children[1].children[0]); // first card of the middle set, centred
+        carousel.scrollLeft = pos;
+        lastSet = carousel.scrollLeft;
+      }
+
+      // pause conditions
+      carousel.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') hovering = true; });
+      carousel.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') hovering = false; });
+      carousel.addEventListener('focusin', function () { focused = true; });
+      carousel.addEventListener('focusout', function (e) { focused = carousel.contains(e.relatedTarget); });
+      carousel.addEventListener('scroll', function () { lastScrollAt = now(); }, { passive: true });
+      carousel.addEventListener('wheel', function () { holdUntil = now() + RESUME_DELAY; }, { passive: true });
+
+      // touch: swiping scrolls natively; a touch also pauses until the user taps elsewhere
+      carousel.addEventListener('pointerdown', function (e) {
+        if (e.pointerType === 'touch') touchHeld = true;
+      });
+      document.addEventListener('pointerdown', function (e) {
+        if (!carousel.contains(e.target)) touchHeld = false;
+      });
+
+      // mouse drag
+      carousel.addEventListener('pointerdown', function (e) {
+        if (e.pointerType !== 'mouse' || e.button !== 0) return;
+        dragging = true;
+        dragMoved = false;
+        dragStartX = e.clientX;
+        dragStartLeft = carousel.scrollLeft;
+        carousel.classList.add('dragging');
+      });
+      window.addEventListener('pointermove', function (e) {
+        if (!dragging) return;
+        var dx = e.clientX - dragStartX;
+        if (Math.abs(dx) > 5) dragMoved = true;
+        carousel.scrollLeft = dragStartLeft - dx;
+      });
+      function endDrag() {
+        if (!dragging) return;
+        dragging = false;
+        carousel.classList.remove('dragging');
+        holdUntil = now() + RESUME_DELAY;
+      }
+      window.addEventListener('pointerup', endDrag);
+      window.addEventListener('pointercancel', endDrag);
+      carousel.addEventListener('dragstart', function (e) { e.preventDefault(); });
+      carousel.addEventListener('click', function (e) {
+        if (dragMoved) { e.preventDefault(); e.stopPropagation(); }
+        dragMoved = false;
+      }, true);
+
+      // animation loop: auto-scroll + keep the position inside the middle set
+      var prevT = 0;
+      function frame(t) {
+        var dt = Math.min(t - (prevT || t), 50) / 1000;
+        prevT = t;
+
+        var sl = carousel.scrollLeft;
+        var autoAllowed = !reduced.matches && !hovering && !focused && !touchHeld && !dragging &&
+                          t >= holdUntil && !document.hidden;
+        var idle = !dragging && (now() - lastScrollAt > 150);
+        var moved = false;
+
+        if (sl !== lastSet) pos = sl;           // the user moved it: follow
+        if (autoAllowed) { pos += SPEED * dt; moved = true; }
+        if (autoAllowed || idle) {              // wrap around without a visible jump
+          if (pos >= G * 1.5) { pos -= G; moved = true; }
+          else if (pos < G * 0.5) { pos += G; moved = true; }
+        }
+
+        if (moved) { carousel.scrollLeft = pos; lastSet = carousel.scrollLeft; }
+        else { pos = sl; lastSet = sl; }
+        requestAnimationFrame(frame);
+      }
+
+      window.addEventListener('resize', measure);
+      window.addEventListener('load', measure);
+      start();
+      requestAnimationFrame(frame);
+    })();
+</script>
 </body>
 
 </html>
